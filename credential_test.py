@@ -9,7 +9,7 @@ class TestUser(unittest.TestCase):
         '''
         this is setup method to run before each testcase
         '''
-        self.new_user = User("tumaa", "1234ali")
+        self.new_user = User("najma", "1234abcd")
         
     def tearDown(self):
         User.user_list = []
@@ -18,8 +18,8 @@ class TestUser(unittest.TestCase):
         '''
         method to test if object is well initialized 
         '''
-        self.assertEqual(self.new_user.lastname,"tumaa")
-        self.assertEqual(self.new_user.password,"1234ali")
+        self.assertEqual(self.new_user.lastname,"najma")
+        self.assertEqual(self.new_user.password,"1234abcd")
     
     def test_save_user(self):
         '''
@@ -39,9 +39,9 @@ class TestCredential(unittest.TestCase):
         '''
         Method to test login functionality.
         '''
-        self.new_user = User('tumaa','12345')
+        self.new_user = User('najma','12345')
         self.new_user.save_user()
-        user2 = User('tuma', '123abc')
+        user2 = User('najma', '123abcd')
         user2.save_user()
         for user in User.user_list:
             if user.lastname == user2.lastname and user.password == user2.password:
@@ -53,22 +53,22 @@ class TestCredential(unittest.TestCase):
         '''
         Function to create an account's credentials before each test
         '''
-        self.new_credential = Credential('twitter','tuma','12345ali')
+        self.new_credential = Credential('twitter','najma','12345abc')
         
     def test__init__(self):
         '''
         test__init__ test case to test if the object is initialized properly
         '''
         self.assertEqual(self.new_credential.account_name,'twitter')
-        self.assertEqual(self.new_credential.username,'tuma')
-        self.assertEqual(self.new_credential.password,'12345ali')
+        self.assertEqual(self.new_credential.username,'najma')
+        self.assertEqual(self.new_credential.password,'12345abcd')
         
     def test_save_credential(self):
         '''
         Test to confirm if the new credential is saved to the credentials list
         '''
         self.new_credential.save_credential()
-        instagram = Credential('Instagram','fatuu','12345ali')
+        instagram = Credential('Instagram','najma','12345abcd')
         instagram.save_credential()
         self.assertEqual(len(Credential.credential_list),9)
         
@@ -84,9 +84,9 @@ class TestCredential(unittest.TestCase):
         Test to check if credentials display method displays
         '''
         self.new_credential.save_credential()
-        instagram = Credential('Instagram','fatuu','12345ali')
+        instagram = Credential('Instagram','najma','1234abcd')
         instagram.save_credential()
-        facebook = Credential('Facebook','tumaa','123ali')
+        facebook = Credential('Facebook','najma','1234abcd')
         facebook.save_credential()
         self.assertEqual(len(Credential.display_credential(instagram.username)), 2)
         
@@ -95,7 +95,7 @@ class TestCredential(unittest.TestCase):
         Test method for finding a credential site_name
         '''
         self.new_credential.save_credential()
-        instagram = Credential('Instagram','fatuu','12345ali')
+        instagram = Credential('Instagram','najma','abcd')
         instagram.save_credential()
         credential_exists = Credential.find_by_account_name('Instagram')
         # self.assertEqual(credential_exists, instagram)
@@ -106,14 +106,14 @@ class TestCredential(unittest.TestCase):
         Test method for copy credential functionality
         '''
         self.new_credential.save_credential()
-        instagram = Credential('Instagram','fatuu','12345ali')
+        instagram = Credential('Instagram','najma','12345abcd')
         instagram.save_credential()
         find_credential = None
         for credential in Credential.user_credential_list:
             find_credential =Credential.find_by_account_name(credential.account_name)
             return pyperclip.copy(find_credential.password)
         Credential.copy_credential(self.new_credential.account_name)
-        self.assertEqual('12345ali',pyperclip.paste())
+        self.assertEqual('12345abcd',pyperclip.paste())
         print(pyperclip.paste())
         
         

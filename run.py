@@ -132,7 +132,7 @@ def main():
                        copy_credential(chosen_account_name)
                        print('')
                        print('Paste copied account_name password here:')
-                       copy = input()
+                     
                    else:
                        print('Incorrect entry.Try again.')
            else:
