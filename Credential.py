@@ -61,3 +61,30 @@ class Credential:
             if credential.username == username:
                 user_credential_list.append(credential)
         return user_credential_list   
+
+        
+    def generate_password (self,size=5, char=string.ascii_lowercase+string.ascii_uppercase+string.digits):
+            '''
+            function to generate random password
+            
+            '''
+            password_generate = "".join(random.choice(char) for _ in range(size))
+            return password_generate
+        
+    @classmethod
+    def find_by_account_name(cls, account_name):
+        '''
+        Function that finds a credential based on the site_name
+        '''
+        for credential in cls.credential_list:
+            if credential.account_name ==  account_name:
+                return credential
+                
+    @classmethod
+    def copy_credential(cls,account_name):
+        '''
+        Function that copies a credential
+        '''
+        find_credential = Credential.find_by_account_name(account_name)
+        return pyperclip.copy(find_credential.password)
+    
