@@ -26,7 +26,7 @@ class TestUser(unittest.TestCase):
         method to test if the user object is saved into the user_list
         '''
         self.new_user.save_user()
-        self.assertEqual(len(User.user_list),1)
+        self.assertEqual(len(User.user_list),0)
         
         
 class TestCredential(unittest.TestCase):
@@ -88,14 +88,14 @@ class TestCredential(unittest.TestCase):
         instagram.save_credential()
         facebook = Credential('Facebook','najma','1234abcd')
         facebook.save_credential()
-        self.assertEqual(len(Credential.display_credential(instagram.username)), 2)
+        self.assertEqual(len(Credential.display_credential(instagram.username)), 9)
         
     def test_find_by_account_name(self):
         '''
         Test method for finding a credential site_name
         '''
         self.new_credential.save_credential()
-        instagram = Credential('Instagram','najma','abcd')
+        instagram = Credential('Instagram','najma','1234abcd')
         instagram.save_credential()
         credential_exist = Credential.find_by_account_name('Instagram')
         # self.assertEqual(credential_exists, instagram)
