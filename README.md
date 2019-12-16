@@ -1,39 +1,44 @@
-<img src="images/scrn.png">
 
+# PASSWORD LOCKER
 
-## pizza world class
-
-## Author
+### Author
 
 - Najma Amin
 
-## Description
+### Description
+Password locker is a python programme which, upon sign up secures your account details for you as well as generate passwords for new accounts.
 
-This a website application where customers order different kind pizza size with one or more toppings and request for delivery to the location their are.This project helps them receive online orders and make deliveries to the respective location.
 
-## Setup/Installation Requirements
+### Setup/Installation Requirements
 
 - Open terminal/command prompt.
-- git clone https://najma-amin.github.io/pizza-project/
-- to use atom to open code type atom . or code . for visual studio.
+- Clone the application`git clone https://github.com/najma-amin/password-locker.git`
+- Navigate into the folder `cd password-locker`
+- to use atom to open code type `atom .` or `code .` for visual studio.
 
-## Known Bug
 
-none
 
-## Technologies Used
+### Technologies Used
 
-- HTML
-- CSS
-- bootstrap
-- jquery
-- javascript
+python3.6
 
-## Support and contact details
 
-In case of any problems with the Webpage feel free to reach out via najmaamin10@gmail.com
+
+
+
+### Support and contact details
+
+For contact najmaamin10@gmail.com.
+### Known Bug
+
+credential_test.py 
+Ran 8 tests in 0.014s
+
+FAILED (failures=2, errors=1)
 
 ### License
 
-- MIT Licence ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-- Copyright (c) 2019
+- MIT Licence
+
+Copyright (c) 2019
+

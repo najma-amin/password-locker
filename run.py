@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3.6
 from Credential import User,Credential
 
@@ -132,7 +133,7 @@ def main():
                        copy_credential(chosen_account_name)
                        print('')
                        print('Paste copied account_name password here:')
-                     
+                       
                    else:
                        print('Incorrect entry.Try again.')
            else:
