@@ -39,7 +39,7 @@ class TestCredential(unittest.TestCase):
         '''
         Method to test login functionality.
         '''
-        self.new_user = User('najma','12345')
+        self.new_user = User('najma','12345abcd')
         self.new_user.save_user()
         user2 = User('najma', '123abcd')
         user2.save_user()
@@ -53,7 +53,7 @@ class TestCredential(unittest.TestCase):
         '''
         Function to create an account's credentials before each test
         '''
-        self.new_credential = Credential('twitter','najma','12345abc')
+        self.new_credential = Credential('twitter','najma','12345abcd')
         
     def test__init__(self):
         '''
