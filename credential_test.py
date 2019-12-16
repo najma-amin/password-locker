@@ -97,7 +97,7 @@ class TestCredential(unittest.TestCase):
         self.new_credential.save_credential()
         instagram = Credential('Instagram','najma','abcd')
         instagram.save_credential()
-        credential_exists = Credential.find_by_account_name('Instagram')
+        credential_exist = Credential.find_by_account_name('Instagram')
         # self.assertEqual(credential_exists, instagram)
         
         
